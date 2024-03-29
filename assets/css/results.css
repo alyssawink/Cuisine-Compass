@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: start;
+    height: 155px;
+    background-color: darkred;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.header-container {
+    padding: 7px;
+    width: 100%;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    background-color: darkred;
+    color: white;
+}
+
+.header-container h1 {
+    display: inline-block;
+    font-size: 60px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
