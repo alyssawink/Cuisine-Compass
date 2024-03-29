@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuisine Compass</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Cuisine Compass</h1>
+        <nav>
+            <ul class="nav-ul">
+                <li><a href="#finder">Food Finder</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="hero">
+            <h3>Your Culinary Journey Begins</h3>
+            <img src="assets/images/header-photo-of-food.jpeg" class="foodPhoto">
+        </div>
+    </header>
+
+    <section class="container">
+        <nav class="search-cont">
+            <div class="finder" id="searchHistory">
+                <form class="form-gp">
+                    <label for="search-term-input"></label> <!-- Added 'for' attribute -->
+                    <div class="side-form">
+                        <input type="text" class="form-control" id="search-term-input" placeholder="Cuisine"> 
+                        <div class="input-text-append">
+                    </div>
+
+                        <label for="search-term-input"></label> <!-- Added 'for' attribute -->
+                     <div class="side-form">
+                        <input type="text" class="form-control" id="search-term-input" placeholder="Enter City or Zipcode"> 
+                     <div class="input-text-append">
+                            <button class="btn" type="submit" id="searchBtn">Search</button>
+                     </div>
+                    </div>
+                </form>
+                <div id="previousSearches"></div>
+            </div>
+        </nav>
+    </section>
+    <footer class="footer">
+        <h4>Made with ❤️️ by Team Four</h4>
+        <p>
+            &copy; 2024 UTA Coding BootCamp.
+        </p>
+    </footer>
+
+</body>
+</html>
