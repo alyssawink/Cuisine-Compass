@@ -14,27 +14,35 @@ header {
 body {
     background-color: rgb(245, 245, 245);
 }
-
-.container {
-    color: black;
+img {
+    border-radius: 5px;
+    /* width: 980px;
+    padding: 0px; */
+}
+.btn {
+    color: rgb(223, 214, 214);
     background-color: black;
-    margin: 20px;
-    height: 0px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    
+    margin: 54px;
+    margin-left: 2px;
+    border-radius: 13px;
+    width: 77px;
+    height: 35px;
+    align-content: center;
+    position: absolute;
+    left: 0;
 }
 
 
 .form-control {
-    width: 17%;
-    padding: 6px;
-    font-size: 17px;
-    border: none;
-    border-radius: 11px;
-    margin-bottom: 5px;
-    background-color: black;
-    color: white;
+    width: 15%;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 13px;
+    background-color: white;
+    color: black;
+    top: 53px;
+    position: relative;
+    margin: 2px;
 }
 
 .header {
@@ -48,8 +56,8 @@ body {
 .header h1 {
     display: inline-block;
     font-size: 60px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 10px;
+    margin-left: 13px;
 }
 
 .header nav {
