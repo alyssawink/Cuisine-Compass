@@ -3,17 +3,16 @@
     padding: 0;
     margin: 0;
 }
-
 header {
     display: flex;
     justify-content: start;
     height: 50px;
     background-color: darkred;
 }
-
 body {
     background-color: rgb(245, 245, 245);
 }
+
 img {
     border-radius: 5px;
     /* width: 980px;
@@ -30,9 +29,16 @@ img {
     align-content: center;
     position: absolute;
     left: 0;
+
+.container {
+    color: black;
+    background-color: black;
+    margin: 20px;
+    height: 0px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
 }
-
-
 .form-control {
     width: 15%;
     padding: 7px;
@@ -44,7 +50,6 @@ img {
     position: relative;
     margin: 2px;
 }
-
 .header {
     padding: 7px;
     width: 100%;
@@ -52,14 +57,12 @@ img {
     background-color: darkred;
     color: rgb(255, 255, 255);
 }
-
 .header h1 {
     display: inline-block;
     font-size: 60px;
     margin-top: 10px;
     margin-left: 13px;
 }
-
 .header nav {
     padding-top: 15px;
     margin-right: 20px;
@@ -67,17 +70,14 @@ img {
     font-family: Impact,'Arial Narrow Bold', sans-serif;
     font-size: 30px;
 }
-
 .header nav ul li {
     display: inline-block;
     margin-left: 25px;
     margin-top: 20px;
 }
-
 .nav-ul li a {
     color: rgb(255, 255, 255);
 }
-
 .hero {
     height: 250px;
     width: 100%;
@@ -85,7 +85,6 @@ img {
     background-size: cover;
     background-position: center;
 }
-
 .hero h3 {
     display: flex;
     justify-content: end;
@@ -93,7 +92,6 @@ img {
     color: white;
     font-size: 30px
 }
-
 .foodPhoto {
     display: block;
     justify-content: end;
@@ -103,7 +101,6 @@ img {
     margin-left: auto;
     margin-right: 2%
 }
-
 .footer {
     position: fixed; /* Fixed position to keep it at the bottom of the viewport */
     left: 0;
@@ -114,10 +111,7 @@ img {
     margin: 10px;
     padding: 20px 0; /* Adjust padding as needed */
     width: 200px; /* Set a fixed width for the footer */
-    
 }
-
 footer h4, p {
     font-size: 13px;
-    
 }
