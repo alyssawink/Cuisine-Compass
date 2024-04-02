@@ -21,15 +21,15 @@ img {
 .btn {
     color: rgb(223, 214, 214);
     background-color: black;
-    margin: 54px;
+    margin: 67px;
     margin-left: 2px;
     border-radius: 13px;
     width: 77px;
     height: 35px;
     align-content: center;
     position: absolute;
-    left: 0;
-
+    left: 7px;
+}
 .container {
     color: black;
     background-color: black;
