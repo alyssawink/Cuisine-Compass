@@ -1,3 +1,5 @@
+const responseArray = JSON.parse(localStorage.getItem("responseObject")) || []
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -37,6 +39,12 @@ const getID = (apiObj) => {
    
     const restaurants = response;
 	console.log(restaurants)
+
+  responseArray.push(restaurants)
+  localStorage.setItem("responseObject", JSON.stringify(responseArray) )
+
+
+  location.href="./landing.html"
   })}}
     
 

@@ -1435,5 +1435,16 @@
     }
   }
   
+
+
+
+  .displayImage{
+    height: 300px;
+    width: 300px;
+  }
   
+  .resultDiv {
+    border: 2px solid black;
+    margin: 10px;
+  }
   

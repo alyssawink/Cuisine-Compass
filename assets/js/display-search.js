@@ -1,3 +1,7 @@
+const responseArray = JSON.parse(localStorage.getItem("responseObject")) || []
+console.log(responseArray)
+const resultContent = document.getElementById("result-content")
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -36,6 +40,31 @@ const getID = (apiObj) => {
   .then((response) => console.log(response));
 }}
 
+function displayResults(){
+
+const returnObject = responseArray[0].data.data
+
+  for(let i = 0; i < returnObject.length; i++){
+    console.log(returnObject[i])
+
+
+    // const rName = document.createElement("h2")
+    // rName.textContent = returnObject[i].name
+    const resultDiv = document.createElement("div")
+    resultDiv.setAttribute("class", "resultDiv")
+    resultDiv.innerHTML = `
+    <h2>${returnObject[i].name}</h2>
+    <img class="displayImage" src="${returnObject[i].heroImgUrl}" alt="no image their fault"></img>
+    <p> ${returnObject[i].establishmentTypeAndCuisineTags[0]}</p>
+    <p> Cost: ${returnObject[i].priceTag}</p>
+    `
+
+
+    resultContent.append(resultDiv)
+  }
+}
+
+displayResults()
 // FIRST ATTEMPT AT API IMPLEMENTATION
 //   const resultTextEl = document.querySelector('#result-text')
 //   const resultContentEl = document.querySelector('#result-content')
