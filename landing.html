@@ -9,6 +9,7 @@
     rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/results.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCO9bEdOOGcj7MQt8KEVbrXsvNvpgabMsw&libraries=places&callback=initAutocomplete"></script>
 </head>
 
 <body>
@@ -36,7 +37,42 @@
       <div id="result-content"></div>
     </div>
   </div>
+  <div id="map" style="height: 400px; width: 33%;"></div>
+  <script>
+      function initAutocomplete() {
+          var map = new google.maps.Map(document.getElementById('map'), {
+              center: { lat: 30.266666, lng: -97.733330 },
+              zoom: 13,
+              mapTypeId: 'roadmap'
+          });
 
+          // Create the search box and link it to the UI element.
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.placeholder = 'Search for places...';
+          input.style.width = '300px';
+
+          var searchBox = new google.maps.places.SearchBox(input);
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+          // Bias the search results towards the current map's viewport.
+          map.addListener('bounds_changed', function () {
+              searchBox.setBounds(map.getBounds());
+          });
+
+          // Listen for the event when a user selects a prediction from the pick list.
+          searchBox.addListener('places_changed', function () {
+              var places = searchBox.getPlaces();
+              if (places.length === 0) {
+                  return;
+              }
+
+              // Handle the selected place(s) here.
+              // For example, you can display markers or perform other actions.
+          });
+      }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCO9bEdOOGcj7MQt8KEVbrXsvNvpgabMsw&libraries=places&callback=initAutocomplete"></script>
   <script src="./assets/js/display-search.js"></script>
 </body>
 
