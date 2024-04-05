@@ -14,50 +14,56 @@ const options = {
 const userFormEl = document.querySelector('#search-form');
 
 function handleSearchFormSubmit(event) {
-    event.preventDefault();
+  
+  event.preventDefault();
 
-    const locationInput = document.querySelector('#search-term-location').value;
+  const locationInput = document.querySelector('#search-term-location').value;
 
-    if (!locationInput) {
-        console.error('Please enter Location.')
-        return;
-    }
-    const urlPull = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=${locationInput}`;
-    fetch(urlPull, options)
-        .then((response) => response.json())
-        .then((jsonInfo) => getID(jsonInfo))
-}
+  if(!locationInput) {
+    console.error('Please enter Location.')
+    return;
+  }
+  const urlPull = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=${locationInput}`;
+  fetch(urlPull, options) 
+  .then((response) => response.json())
+  .then((jsonInfo) => getID(jsonInfo))
 
-function getID(apiObj) {
-    const result = apiObj.data[0].locationId;
-    const urlPaste = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=${result}`;
-    fetch(urlPaste, options)
-        .then((response) => response.json())
-        .then((response) => {
-            // Store the response in responseArray
-            responseArray[0] = response;
-            localStorage.setItem("responseObject", JSON.stringify(responseArray));
-            // Display results
-            displayResults();
-        });
-}
 
-function displayResults() {
-    resultContent.innerHTML = ''; // Clear previous results
+const getID = (apiObj) => {
+	console.log(apiObj)
+	const result = apiObj.data[0].locationId;
+	console.log(result)
+  
+  const urlPaste = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=${result}`;
+  fetch(urlPaste, options) 
+  .then((response) => response.json())
+  .then((response) => console.log(response));
+}}
 
-    const returnObject = responseArray[0].data.data;
+function displayResults(){
 
-    for (let i = 0; i < returnObject.length; i++) {
-        const resultDiv = document.createElement("div");
-        resultDiv.setAttribute("class", "resultDiv");
-        resultDiv.innerHTML = `
-            <h2>${returnObject[i].name}</h2>
-            <img class="displayImage" src="${returnObject[i].heroImgUrl}" alt="no image their fault">
-            <p>${returnObject[i].establishmentTypeAndCuisineTags[0]}</p>
-            <p>Cost: ${returnObject[i].priceTag}</p>
-        `;
-        resultContent.append(resultDiv);
-    }
+const returnObject = responseArray[0].data.data
+
+  for(let i = 0; i < returnObject.length; i++){
+    console.log(returnObject[i])
+
+
+    // const rName = document.createElement("h2")
+    // rName.textContent = returnObject[i].name
+    const resultDiv = document.createElement("div")
+    resultDiv.setAttribute("class", "resultDiv")
+    resultDiv.innerHTML = `
+    <h2 class="RestName">${returnObject[i].name}</h2>
+    <img class="displayImage" src="${returnObject[i].squareImgUrl}" alt="no image displayed"></img>
+    <p class="cuisineTag">${returnObject[i].establishmentTypeAndCuisineTags[0]}</p>
+    <p class="priceTag"> Cost: ${returnObject[i].priceTag}</p>
+    <p class="rating"> Rating: ${returnObject[i].averageRating}</p>
+    <p class="openStatus"> Status: ${returnObject[i].currentOpenStatusText}
+    <p class="reviewSnippet">${returnObject[i].reviewSnippets.reviewSnippetsList[0].reviewText}</p>
+    `
+
+    resultContent.append(resultDiv)
+  }
 }
 
 displayResults()
