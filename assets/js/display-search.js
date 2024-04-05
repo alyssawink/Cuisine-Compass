@@ -53,12 +53,14 @@ const returnObject = responseArray[0].data.data
     const resultDiv = document.createElement("div")
     resultDiv.setAttribute("class", "resultDiv")
     resultDiv.innerHTML = `
-    <h2>${returnObject[i].name}</h2>
-    <img class="displayImage" src="${returnObject[i].heroImgUrl}" alt="no image their fault"></img>
-    <p> ${returnObject[i].establishmentTypeAndCuisineTags[0]}</p>
-    <p> Cost: ${returnObject[i].priceTag}</p>
+    <h2 class="RestName">${returnObject[i].name}</h2>
+    <img class="displayImage" src="${returnObject[i].squareImgUrl}" alt="no image displayed"></img>
+    <p class="cuisineTag">${returnObject[i].establishmentTypeAndCuisineTags[0]}</p>
+    <p class="priceTag"> Cost: ${returnObject[i].priceTag}</p>
+    <p class="rating"> Rating: ${returnObject[i].averageRating}</p>
+    <p class="openStatus"> Status: ${returnObject[i].currentOpenStatusText}
+    <p class="reviewSnippet">${returnObject[i].reviewSnippets.reviewSnippetsList[0].reviewText}</p>
     `
-
 
     resultContent.append(resultDiv)
   }
