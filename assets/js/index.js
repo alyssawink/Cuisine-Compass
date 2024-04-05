@@ -1,59 +1,49 @@
-const responseArray = JSON.parse(localStorage.getItem("responseObject")) || []
+let urlPull = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=austin';
+let urlPaste = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=30196';
+
+let responseArray = JSON.parse(localStorage.getItem("responseObject")) || [];
 
 const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '4dc8e48276msh44bcaa71dc3aab5p1042e0jsnacd6bc1ca8a0',
-		'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com'
+		'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com',
+		'Cache-Control': 'no-cache',
 	}
 };
 
-let urlPull = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=austin';
-let urlPaste = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=30196';
 const userFormEl = document.querySelector('#search-form');
 
 function handleSearchFormSubmit(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  const locationInput = document.querySelector('#search-term-location').value;
+    const locationInput = document.querySelector('#search-term-location').value;
 
-  if(!locationInput) {
-    console.error('Please enter Location.')
-    return;
-  }
-  const urlPull = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=${locationInput}`;
-  fetch(urlPull, options) 
-  .then((response) => response.json())
-  .then((jsonInfo) => getID(jsonInfo))
+    if (!locationInput) {
+        console.error('Please enter Location.');
+        return;
+    }
 
+    const urlPull = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=${locationInput}`;
 
-const getID = (apiObj) => {
-	console.log(apiObj)
-	const result = apiObj.data[0].locationId;
-	console.log(result)
-  
-  const urlPaste = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=${result}`;
-  fetch(urlPaste, options) 
-  .then((response) => response.json())
-  .then(response => {
-   
-    const restaurants = response;
-	console.log(restaurants)
+    fetch(urlPull, options)
+        .then((response) => response.json())
+        .then((jsonInfo) => {
+            const result = jsonInfo.data[0].locationId;
+            const urlPaste = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=${result}`;
 
-  responseArray.push(restaurants)
-  localStorage.setItem("responseObject", JSON.stringify(responseArray) )
+            fetch(urlPaste, options)
+                .then((response) => response.json())
+                .then(response => {
+                    const restaurants = response;
+                    // Update responseArray with the latest search results
+                    responseArray = [restaurants];
+                    localStorage.setItem("responseObject", JSON.stringify(responseArray));
+                    location.href = "./landing.html";
+                })
+        })
+}
 
-
-  location.href="./landing.html"
-  })}}
-    
-
-
-// Use if implementing landing page
-//   const queryString = `./landing.html?q=${locationInput}`;
-
-//   location.assign(queryString);
-// }
 userFormEl.addEventListener('submit', handleSearchFormSubmit);
 
 

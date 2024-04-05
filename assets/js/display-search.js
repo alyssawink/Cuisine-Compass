@@ -1,20 +1,20 @@
-const responseArray = JSON.parse(localStorage.getItem("responseObject")) || []
-console.log(responseArray)
-const resultContent = document.getElementById("result-content")
+const responseArray = JSON.parse(localStorage.getItem("responseObject")) || [];
+console.log(responseArray);
+const resultContent = document.getElementById("result-content");
 
 const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '4dc8e48276msh44bcaa71dc3aab5p1042e0jsnacd6bc1ca8a0',
-		'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '4dc8e48276msh44bcaa71dc3aab5p1042e0jsnacd6bc1ca8a0',
+        'X-RapidAPI-Host': 'tripadvisor16.p.rapidapi.com',
+        'Cache-Control': 'no-cache',
+    }
 };
 
-let urlPull = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=austin';
-let urlPaste = 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=30196';
 const userFormEl = document.querySelector('#search-form');
 
 function handleSearchFormSubmit(event) {
+  
   event.preventDefault();
 
   const locationInput = document.querySelector('#search-term-location').value;
@@ -67,6 +67,9 @@ const returnObject = responseArray[0].data.data
 }
 
 displayResults()
+
+userFormEl.addEventListener('submit', handleSearchFormSubmit);
+
 // FIRST ATTEMPT AT API IMPLEMENTATION
 //   const resultTextEl = document.querySelector('#result-text')
 //   const resultContentEl = document.querySelector('#result-content')
