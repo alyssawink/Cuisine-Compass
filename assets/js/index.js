@@ -46,6 +46,39 @@ function handleSearchFormSubmit(event) {
 
 userFormEl.addEventListener('submit', handleSearchFormSubmit);
 
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Get modal
+  const modal = document.getElementById('aboutModal');
+
+  // Get button to open modal
+  const btn = document.getElementById("aboutButton");
+
+  // Get close button for modal
+  const closeButton = modal.querySelector('.modal-close');
+
+  // Function to open modal
+  btn.onclick = function () {
+      modal.classList.add('is-active');
+  }
+
+  // Function to close modal when clicking on close button or background
+  if (modal && closeButton) {
+      [modal, closeButton].forEach(function (el) {
+          el.addEventListener('click', function () {
+              modal.classList.remove('is-active');
+          });
+      });
+  }
+
+  // Prevent modal from closing when clicking inside modal content
+  if (modal) {
+      modal.querySelector('.modal-content').addEventListener('click', function (e) {
+          e.stopPropagation();
+      });
+  }
+});
+
 
 
 

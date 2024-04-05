@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
 }
+html {
+    background-color: white;
+}
 header {
     display: flex;
     justify-content: start;
@@ -78,6 +81,18 @@ img {
 .nav-ul li a {
     color: rgb(255, 255, 255);
 }
+.button {
+    display: inline-block;
+    background-color: darkred; /* Red color */
+    color: #ffffff; /* White text */
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: none;
+    font-size: 30px;
+
+
+}
 .hero {
     height: 250px;
     width: 100%;
@@ -91,6 +106,14 @@ img {
     margin-right: 20px;
     color: white;
     font-size: 30px
+}
+.box {
+    background-color: darkred;
+}
+.box p {
+    font-size: 20px;
+    font-family: Impact,'Arial Narrow Bold', sans-serif;
+    color: #ffffff;
 }
 .foodPhoto {
     display: block;

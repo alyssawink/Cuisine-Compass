@@ -13,7 +13,7 @@
         <h1>Cuisine Compass</h1>
         <nav>
             <ul class="nav-ul">
-                <li><a href="#finder">Food Finder</a></li>
+                <li><a href="#finder">Contact Us</a></li>
                 <li><button id="aboutButton" class="button">About</button></li>
             </ul>
         </nav>
@@ -63,46 +63,10 @@
         <div class="modal-content">
             <div class="box">
                 <h2 class="title is-2">About Cuisine Compass</h2>
-                <p>Test Paragraph</p>
+                <p>The Cuisine Compass is a web application that allows users to easily locate restaurants serving based on their location and can view restaurant details, and make informed dining decisions.</p>
             </div>
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            // Get modal
-            const modal = document.getElementById('aboutModal');
-
-            // Get button to open modal
-            const btn = document.getElementById("aboutButton");
-
-            // Get close button for modal
-            const closeButton = modal.querySelector('.modal-close');
-
-            // Function to open modal
-            btn.onclick = function () {
-                modal.classList.add('is-active');
-            }
-
-            // Function to close modal when clicking on close button or background
-            if (modal && closeButton) {
-                [modal, closeButton].forEach(function (el) {
-                    el.addEventListener('click', function () {
-                        modal.classList.remove('is-active');
-                    });
-                });
-            }
-
-            // Prevent modal from closing when clicking inside modal content
-            if (modal) {
-                modal.querySelector('.modal-content').addEventListener('click', function (e) {
-                    e.stopPropagation();
-                });
-            }
-        });
-    </script>
-
 </body>
 </html>
