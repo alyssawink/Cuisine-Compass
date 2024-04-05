@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuisine Compass</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
@@ -12,8 +13,8 @@
         <h1>Cuisine Compass</h1>
         <nav>
             <ul class="nav-ul">
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#finder">Food Finder</a></li>
+                <li><button id="aboutButton" class="button">About</button></li>
             </ul>
         </nav>
     </div>
@@ -55,6 +56,53 @@
     </footer>
 
     <script src="./assets/js/index.js"></script>
+
+    
+    <div id="aboutModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <h2 class="title is-2">About Cuisine Compass</h2>
+                <p>Test Paragraph</p>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Get modal
+            const modal = document.getElementById('aboutModal');
+
+            // Get button to open modal
+            const btn = document.getElementById("aboutButton");
+
+            // Get close button for modal
+            const closeButton = modal.querySelector('.modal-close');
+
+            // Function to open modal
+            btn.onclick = function () {
+                modal.classList.add('is-active');
+            }
+
+            // Function to close modal when clicking on close button or background
+            if (modal && closeButton) {
+                [modal, closeButton].forEach(function (el) {
+                    el.addEventListener('click', function () {
+                        modal.classList.remove('is-active');
+                    });
+                });
+            }
+
+            // Prevent modal from closing when clicking inside modal content
+            if (modal) {
+                modal.querySelector('.modal-content').addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
