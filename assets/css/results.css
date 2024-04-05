@@ -1436,15 +1436,158 @@
   }
   
 
-
+  .restName {
+    margin-left: 10px;
+  }
 
   .displayImage{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px
   }
   
   .resultDiv {
     border: 2px solid black;
     margin: 10px;
+    width: auto;
+    height: 300px;
+    flex-wrap: wrap;
+  }
+
+  .cuisineTag {
+    position: relative;
+    top: -170px;
+    left: 10px;
+    font-size: 20px;
+    margin-left: auto;
+    font-family:'Times New Roman', Times, serif;
+    background-color: darkred;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: inline-flex;
   }
   
+  .priceTag {
+    position: relative;
+    margin-left: auto;
+    top: -170px;
+    right: -20px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    background-color: darkred;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: inline-flex;
+
+  }
+
+  .rating {
+    position: relative;
+    margin-left: auto;
+    top: -170px;
+    right: -30px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    background-color: darkred;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display:inline-flex;
+  }
+
+  .openStatus {
+    position: relative;
+    margin-left: auto;
+    top: -170px;
+    right: -40px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    background-color: darkred;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: inline-flex;
+  }
+
+  .reviewSnippet {
+    position: relative;
+    top: -170px;
+    left: 225px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    width: 70%;
+
+  }
+
+  .container {
+    width: 80%; /* Adjust the width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding */
+    background-color: #f0f0f0; /* Add a background color */
+}
+
+h1 {
+    font-size: 2em; /* Adjust font size */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%; /* Change width to fit smaller screens */
+    }
+
+    .displayImage {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .resultDiv {
+      flex-direction: column;
+      height: auto;
+      width: auto;
+    }
+
+    .cuisineTag {
+      flex-direction: column;
+      height: auto;
+      position: relative;
+      top: 40px;
+      left: -200px;
+    
+    }
+
+    .priceTag {
+      flex-direction: column;
+      height: auto;
+      position: relative;
+      top: 40px;
+      left: 12px;
+    }
+
+    .rating {
+      flex-direction: column;
+      height: auto;
+      position: relative;
+      top: 90px;
+      left: -115px;
+    }
+
+    .openStatus {
+      flex-direction: column;
+      height: auto;
+      position: relative;
+      top: 90px;
+      left: 10px;
+    }
+
+    .reviewSnippet {
+      flex-direction: column;
+      height: auto;
+      position: relative;
+      top: 90px;
+      left: 10px;
+    }
+
+
+}
