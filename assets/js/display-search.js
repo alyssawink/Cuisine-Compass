@@ -14,33 +14,36 @@ const options = {
 const userFormEl = document.querySelector('#search-form');
 
 function handleSearchFormSubmit(event) {
-  
   event.preventDefault();
 
   const locationInput = document.querySelector('#search-term-location').value;
 
-  if(!locationInput) {
-    console.error('Please enter Location.')
-    return;
+  if (!locationInput) {
+      console.error('Please enter Location.')
+      return;
   }
   const urlPull = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation?query=${locationInput}`;
-  fetch(urlPull, options) 
-  .then((response) => response.json())
-  .then((jsonInfo) => getID(jsonInfo))
+  fetch(urlPull, options)
+      .then((response) => response.json())
+      .then((jsonInfo) => getID(jsonInfo))
+}
 
-
-const getID = (apiObj) => {
-	console.log(apiObj)
-	const result = apiObj.data[0].locationId;
-	console.log(result)
-  
+function getID(apiObj) {
+  const result = apiObj.data[0].locationId;
   const urlPaste = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=${result}`;
-  fetch(urlPaste, options) 
-  .then((response) => response.json())
-  .then((response) => console.log(response));
-}}
+  fetch(urlPaste, options)
+      .then((response) => response.json())
+      .then((response) => {
+          // Store the response in responseArray
+          responseArray[0] = response;
+          localStorage.setItem("responseObject", JSON.stringify(responseArray));
+          // Display results
+          displayResults();
+      });
+}
 
 function displayResults(){
+  resultContent.innerHTML = '';
 
 const returnObject = responseArray[0].data.data
 
