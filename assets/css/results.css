@@ -1440,7 +1440,7 @@
     margin-left: 10px;
   }
 
-  .displayImage{
+  .displayImage  {
     height: 200px;
     width: 200px;
     margin-left: 10px
@@ -1500,7 +1500,6 @@
 
   .openStatus {
     position: relative;
-    margin-left: auto;
     top: -170px;
     right: -40px;
     font-size: 20px;
@@ -1533,17 +1532,118 @@ h1 {
     font-size: 2em; /* Adjust font size */
 }
 
+@media screen and (max-width: 1060px) {
+  .resultDiv {
+    height: auto; /* Change to auto height for smaller screens */
+  }
+
+  .displayImage  {
+    height: 200px;
+    width: 200px;
+    margin-left: 10px
+  }
+
+  .openStatus {
+    height: auto;
+    position: relative;
+    top: -120px;
+    left: -260px;
+  }
+
+  .reviewSnippet {
+    height: auto;
+    position: relative;
+    top: -20px;
+    left: 10px;
+}
+
+}
+
+@media screen and (max-width: 1007px) {
+  .resultDiv {
+    height: auto; /* Change to auto height for smaller screens */
+  }
+
+  .displayImage  {
+    height: 200px;
+    width: 200px;
+    margin-left: 10px
+  }
+
+  .openStatus {
+    height: auto;
+    position: relative;
+    top: -170px;
+    left: 220px;
+  }
+
+  .reviewSnippet {
+    height: auto;
+    position: relative;
+    top: -20px;
+    left: 10px;
+}
+
+}
+
+@media screen and (max-width: 822px) {
+  .resultDiv {
+    height: auto; /* Change to auto height for smaller screens */
+  }
+
+  .openStatus {
+    height: auto;
+    position: relative;
+    top: -170px;
+    left: 225px;
+  }
+
+  .reviewSnippet {
+    height: auto;
+    position: relative;
+    top: -60px;
+    left: 10px;
+}
+
+}
+
+@media screen and (max-width: 776px) {
+  .resultDiv {
+    height: auto; /* Change to auto height for smaller screens */
+  }
+
+  .priceTag {
+    position: relative;
+    top: -120px;
+    right: 85px;
+  }
+
+  .rating {
+    top: -120px;
+    right: -224px;
+    display:inline-flex;
+  }
+
+  .openStatus {
+    position: relative;
+    top: -70px;
+    left: 120px;
+  }
+
+  .reviewSnippet {
+    position: relative;
+    top: -60px;
+    left: 10px;
+}
+
+}
+
+
 @media screen and (max-width: 768px) {
   .resultDiv {
     height: auto; /* Change to auto height for smaller screens */
   }
-}
 
-@media screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        height: auto;  /* Change width to fit smaller screens */
-    }
 
     .displayImage {
       flex-direction: row;
@@ -1568,28 +1668,31 @@ h1 {
       flex-direction: row;
       height: auto;
       position: relative;
-      top: -170px;
-      left: 223px;
+      top: -120px;
+      left: -84px;
     }
 
     .rating {
       height: auto;
       position: relative;
+      margin: auto;
       top: -120px;
-      left: 120px;
+      left: 220px;
     }
 
     .openStatus {
       flex-direction: row;
       flex-wrap: wrap;
+      margin: auto;
       height: auto;
       position: relative;
       top: -70px;
-      left: 15px;
+      left: 115px;
     }
 
     .reviewSnippet {
       flex-direction: column;
+      margin: auto;
       height: auto;
       position: relative;
       top: -70px;
