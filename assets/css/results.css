@@ -1452,6 +1452,7 @@
     width: auto;
     height: 300px;
     flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .cuisineTag {
@@ -1533,60 +1534,111 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
+  .resultDiv {
+    height: auto; /* Change to auto height for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
     .container {
-        width: 100%; /* Change width to fit smaller screens */
+        width: 100%;
+        height: auto;  /* Change width to fit smaller screens */
     }
 
     .displayImage {
-      flex-direction: column;
+      flex-direction: row;
       height: auto;
     }
 
     .resultDiv {
-      flex-direction: column;
+      flex-direction: row;
       height: auto;
       width: auto;
     }
 
     .cuisineTag {
-      flex-direction: column;
+      flex-direction: row;
       height: auto;
       position: relative;
-      top: 40px;
-      left: -200px;
+      left: 10px;
     
     }
 
     .priceTag {
-      flex-direction: column;
+      flex-direction: row;
       height: auto;
       position: relative;
-      top: 40px;
-      left: 12px;
+      top: -170px;
+      left: 223px;
     }
 
     .rating {
-      flex-direction: column;
       height: auto;
       position: relative;
-      top: 90px;
-      left: -115px;
+      top: -120px;
+      left: 120px;
     }
 
     .openStatus {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       height: auto;
       position: relative;
-      top: 90px;
-      left: 10px;
+      top: -70px;
+      left: 15px;
     }
 
     .reviewSnippet {
       flex-direction: column;
       height: auto;
       position: relative;
-      top: 90px;
+      top: -70px;
       left: 10px;
+    }
+
+    .srch-btn {
+      /* padding: 10px;
+      margin: 10px;
+      left: 7px;
+      right: 7px;
+      background-color: rgb(178, 212, 23) !important; */
+      float: left;
+      width:40%;
+      padding: 8px;
+      font-size: 17px;
+      border-radius: 13px;
+      background-color: black;
+      color: white;
+      top: 10px;
+      position: relative;
+      /* margin: 0px; */
+    }
+
+    .bxs-left-arrow-square {
+      float: right;
+      width: 40%;
+      padding: 8px;
+      font-size: 17px;
+      border-radius: 13px;
+      background-color: black;
+      color: white;
+      top: -10px;
+      position: relative;
+      justify-content: space-evenly;
+      display: flex;
+    }
+
+    .d-resultform {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 13px;
+      background-color: white;
+      color: black;
+      top: 1px;
+      position: relative;
+      margin: 0px;
+      display: flex;
     }
 
 
