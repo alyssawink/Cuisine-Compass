@@ -82,3 +82,85 @@ function initMap() {
 }
 
 initMap()
+
+
+// FIRST ATTEMPT AT API IMPLEMENTATION
+//   const resultTextEl = document.querySelector('#result-text')
+//   const resultContentEl = document.querySelector('#result-content')
+//   const userFormEl = document.querySelector('#search-form')
+
+//   function getParams() {
+//     const searchParamsArr = document.location.search.split('&');
+
+//     const query = searchParamsArr[0].split('=').pop(); //test .pop
+//     const format = searchParamsArr[1]; // test .split
+
+//     searchApi(query, format);
+//   }
+
+//   function printResults(resultObj) {
+//     console.log(resultObj);
+//   }
+
+//   function searchApi(query, format) {
+//     let locQueryUrl = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=30196`;
+
+//     if (format) {
+//         locQueryUrl = `https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants?locationId=30196`
+//     }
+
+//     locQueryUrl = `${locQueryUrl}&q=${query}`;
+
+//     fetch(locQueryUrl, options)
+//         .then(function (response) {
+//             if (!response.ok) {
+//                 throw response.json();
+//             }
+
+//             return response.json();
+//         })
+//         .then(function (locRes) {
+//         resultTextEl.textContent = locRes.search.query;
+//         console.log(locRes);
+
+//         if (!locRes.results.length) {
+//             console.log('No results found!');
+//             resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
+//             } else {
+//             resultContentEl.textContent = '';
+//             for (let i = 0; i < locRes.results.length; i++) {
+//                 printResults(locRes.results[i]);
+//             }
+//         }
+//     })
+//     .catch(function (error) {
+//               console.error(error);
+//     });
+// }
+
+// function handleSearchFormSubmit(event) {
+//     event.preventDefault();
+  
+//     const cuisineInput = document.querySelector('#search-term-input').value;
+//     const locationInput = document.querySelector('#search-term-location').value;
+
+//     const queryString = `./landing.html?q=${locationInput}`;
+
+//     location.assign(queryString);
+  
+//     if(!locationInput) {
+//       console.error('Please enter Cuisine and Location.');
+//       return;
+//     }
+
+//     getParams();
+  
+//   }
+//   userFormEl.addEventListener('submit', handleSearchFormSubmit);
+
+//   getParams();
+
+            
+        
+
+  
