@@ -73,6 +73,17 @@ displayResults()
 
 userFormEl.addEventListener('submit', handleSearchFormSubmit);
 
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 8,
+    center: { lat: 37.7749, lng: -122.4194 },
+  });
+}
+
+initMap()
+
+
 // FIRST ATTEMPT AT API IMPLEMENTATION
 //   const resultTextEl = document.querySelector('#result-text')
 //   const resultContentEl = document.querySelector('#result-content')
