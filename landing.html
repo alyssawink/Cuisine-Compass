@@ -7,13 +7,14 @@
   <title>Results | Cuisine Compass Search</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
     rel="stylesheet" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfqxkUU7n9GNY_ML7dOEt7KDFoWfPRNEA"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/results.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-
+  <div id="map"></div> <!-- This is the container for the map -->
   <div class="flex-row align-start align-stretch-md align-content-start align-content-stretch-md min-100-vh bg-primary">
     <div class="col-12 col-md-3 bg-light p-3">
       <h1 class="text-primary">Cuisine Compass Search Engine</h1>
@@ -28,7 +29,7 @@
 
         <button class="srch-btn" id="srcbtn">Search</button>
       </form>
-
+  
       <!-- <a href="./index.html" id="backbtn" class="btn btn-info" >&larr; Go back.</a> -->
     </div>
 
@@ -36,7 +37,10 @@
       <h2>Displaying results for <span id="result-text"></span></h2>
       <div id="result-content"></div>
     </div>
+
   </div>
+
+
 
   <script src="./assets/js/display-search.js"></script>
 </body>

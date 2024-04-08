@@ -1746,3 +1746,68 @@ h1 {
 
 
 }
+
+@media screen and (max-width: 390px) {
+  .resultDiv {
+    height: auto; /* Change to auto height for smaller screens */
+  }
+
+
+    .displayImage {
+      flex-direction: row;
+      height: auto;
+    }
+
+    .resultDiv {
+      flex-direction: row;
+      height: auto;
+      width: auto;
+    }
+
+    .cuisineTag {
+      flex-direction: row;
+      height: auto;
+      position: relative;
+      left: 20px;
+    
+    }
+
+    .priceTag {
+      flex-direction: row;
+      height: auto;
+      position: relative;
+      top: -170px;
+      left: 215px;
+    }
+
+    .rating {
+      height: auto;
+      position: relative;
+      margin: auto;
+      top: -120px;
+      left: 100px;
+    }
+
+    .openStatus {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: auto;
+      height: auto;
+      position: relative;
+      top: -70px;
+      left: 100px;
+    }
+  }
+
+  #map {
+    height: 500px; /* Adjust height as needed */
+    width: 25%; /* Adjust width as needed */
+     z-index: 3;
+      position: absolute;
+      padding: 0px;
+      border-width: px;
+      margin: 0px;
+      left: 0px;
+      top: 300px;
+      touch-action: pan-x pan-y;
+}
